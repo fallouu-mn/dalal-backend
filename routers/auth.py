@@ -27,8 +27,10 @@ def create_access_token(data: dict):
 @router.post("/inscription")
 async def inscription(user: UserCreate):
     # Vérification si utilisateur existe
+    print(f"🔍 Tentative d'inscription pour: {user.email}")
     existing = supabase.table("utilisateurs").select("*").eq("email", user.email).execute()
     if existing.data:
+        print(f"❌ Email déjà utilisé: {user.email}")
         raise HTTPException(status_code=400, detail="Email déjà utilisé")
     
     # Hashage password
