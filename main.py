@@ -33,6 +33,8 @@ app.add_middleware(
         "https://dalal-joj.vercel.app",
         "https://dalal-joj2026.vercel.app",
         "https://dakar-journey-companion-main-dhz54p714.vercel.app",
+        # Backend Render (pour appels internes si nécessaire)
+        "https://dalal-backend-qqx1.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
