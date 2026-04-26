@@ -2,6 +2,8 @@ services:
   - type: web
     name: dalal-backend
     env: python
+    runtime: python
+    pythonVersion: "3.11.9"
     region: frankfurt  # le plus proche de l'Afrique de l'Ouest
     plan: free
     buildCommand: pip install -r requirements.txt
