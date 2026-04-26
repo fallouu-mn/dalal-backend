@@ -26,6 +26,8 @@ class DummySupabase:
 try:
     if url and key:
         supabase: Client = create_client(url, key)
+        if supabase is None:
+            raise ValueError("Le client Supabase est None après create_client")
         print("✅ Supabase connecté avec succès")
     else:
         supabase = DummySupabase()
